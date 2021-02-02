@@ -1,0 +1,130 @@
+.questionaire {
+    background-color: white;
+    padding: 2rem 1rem;
+
+    &__container {
+        max-width: 600px;
+        margin: 0 auto;
+
+        @media (min-width: $desktop) {
+            max-width: 900px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__h2 {
+        font-family: $raleway;
+        font-size: 2.5rem;
+        font-weight: normal;
+        color: black;
+    }
+
+    &__p {
+        font-family: $open-sans;
+        font-size: 1rem;
+        font-weight: normal;
+        color: black;
+        padding: 0.5rem 0;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem 0;
+    }
+
+    &__email-tel {
+        display: flex;
+        padding: 0.5rem 0;
+    }
+
+    &__icon {
+        width: 27px;
+        height: 27px;
+        background-size: contain;
+        background-position: center;
+
+        &--email {
+            background: url(../assets/MailIcon.svg);
+        }
+
+        &--tel {
+            background: url(../assets/PhoneIcon.svg);
+        }
+    }
+
+    &__contact-link {
+            font-family: $open-sans;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.7rem;
+            color: $darkgrey;
+            text-decoration: none;
+            padding: 0 1rem;
+        }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-family: $open-sans;
+        font-size: 0.7rem;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        color: $blue;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        background: none;
+        border-style: none;
+        border-bottom: 2px solid $darkgrey;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    &__consent {
+        display: flex;
+        padding: 1rem 0;
+    }
+
+    &__checkbox-hide {
+        min-width: 24px;
+        min-height: 24px;
+        border: 1px solid $darkgrey;
+        border-radius: 5px;
+    }
+
+    &__text-consent {
+        font-family: $open-sans;
+        font-size: 0.75rem;
+        font-weight: normal;
+        line-height: 1rem;
+        color: $darkgrey;
+        padding-left: 1rem;
+    }
+
+    &__btn {
+        font-family: $open-sans;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: white;
+        border-style: none;
+        background-color: $blue;
+        border-radius: 35px;
+        box-shadow: 5px 10px 14px #07ACE629;
+        padding: 1rem 5rem;
+        align-self: flex-end;
+        margin: 1rem 0;
+        cursor: pointer;
+    }
+
+}

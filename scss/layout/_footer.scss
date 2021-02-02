@@ -1,0 +1,51 @@
+.footer {
+    background: $lightgrey;
+    box-shadow: 0px -5px 40px #00000029;
+
+    &__container {
+        max-width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__h {
+        font-family: $raleway;
+        font-size: 1.625rem;
+        font-weight: 300;
+        color: $blue;
+    }
+
+    &__p {
+        font-family: $open-sans;
+        font-size: 0.68rem;
+        font-weight: normal;
+        color: $darkgrey;
+    }
+
+    &__social-media {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+
+        &--twitter {
+            background: url(../assets/Twitter.svg);
+        }
+
+        &--facebook {
+            background: url(../assets/Facebook.svg);
+            margin-left: 1rem;
+        }
+    }
+}

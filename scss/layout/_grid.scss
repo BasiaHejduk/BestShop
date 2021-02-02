@@ -1,0 +1,51 @@
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    // padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @for $i from 1 to 13 {
+    .col-#{$i} {
+      width: 100% / 12 * $i;
+      min-height: 1px;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: $mobile) {
+      .col-sm-#{$i} {
+        width: 100% / 12 * $i;
+        padding: 0 15px;
+        min-height: 1px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      .col-md-#{$i} {
+        width: 100% / 12 * $i;
+        padding: 0 15px;
+        min-height: 1px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media (min-width: $desktop) {
+      .col-lg-#{$i} {
+        width: 100% / 12 * $i;
+        padding: 0 15px;
+        min-height: 1px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+}

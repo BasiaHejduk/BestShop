@@ -1,0 +1,51 @@
+.slogan {
+    width: 100%;
+    // min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__h1 {
+        font-family: $raleway;
+        font-size: 2rem;
+        font-weight: normal;
+        color: black;
+        text-align: center;
+        margin-top: 6rem;
+    }
+
+    &__p {
+        font-family: $open-sans;
+        font-size: 1rem;
+        font-weight: normal;
+        color: black;
+        padding: 0 4rem;
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+
+    &__btn {
+        font-family: $open-sans;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        background-color: $blue;
+        padding: 1.5rem 5rem;
+        border: none;
+        border-radius: 40px;
+        box-shadow: 5px 10px 14px #07ACE629;
+        cursor: pointer;
+    }
+
+    &__banner {
+        background-image: url(../assets/Background.png);
+        width: 100%;
+        padding-bottom: 35%;
+        background-size: cover;
+        background-position: center;
+        margin-top: 3rem;
+    }
+
+
+}
