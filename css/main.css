@@ -891,6 +891,131 @@ body {
   background-color: #55DFB4;
 }
 
+.calculator {
+  background-color: #F7F7F7;
+}
+.calculator__container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (min-width: 1101px) {
+  .calculator__container {
+    max-width: 900px;
+  }
+}
+.calculator__h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: black;
+  text-align: center;
+  padding: 1.5rem 3rem;
+}
+.calculator__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+@media (min-width: 1101px) {
+  .calculator__form {
+    align-items: flex-start;
+  }
+}
+.calculator__input {
+  height: 40px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #08A6E4;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px #08A6E429;
+  margin-bottom: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  color: black;
+  padding: 0 1rem;
+}
+@media (min-width: 520px) {
+  .calculator__input {
+    width: 420px;
+  }
+}
+.calculator__options {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  color: #95989A;
+}
+.calculator__checkbox {
+  margin-right: 10px;
+}
+.calculator__total-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+@media (min-width: 1101px) {
+  .calculator__total-result {
+    align-items: flex-end;
+  }
+}
+.calculator__results {
+  display: flex;
+  flex-direction: column;
+}
+.calculator__partial-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 31px;
+  width: 300px;
+  background-color: #55DFB4;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px #00000029;
+  margin-bottom: 10px;
+}
+@media (min-width: 520px) {
+  .calculator__partial-results {
+    width: 420px;
+  }
+}
+.calculator__item {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 0 1rem;
+  color: white;
+}
+.calculator__operation {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 0 1rem;
+  color: white;
+}
+.calculator__price {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  color: white;
+}
+.calculator__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+  width: 180px;
+  background-color: #08A6E4;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px #00000029;
+  color: white;
+  margin: 10px 0;
+}
 .questionaire {
   background-color: white;
   padding: 2rem 1rem;
