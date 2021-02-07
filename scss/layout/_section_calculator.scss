@@ -68,6 +68,7 @@
             align-items: flex-end;
         }
         padding: 20px 0;
+        position: relative;
     }
 
     &__results {
@@ -125,10 +126,14 @@
         box-shadow: 0px 3px 6px #00000029;
         color: white;
         margin: 10px 0;
+        @media (min-width: $mobile) {
+            position: absolute;
+            top: 230px;           
+        }
     }
 
     &__hidden {
-        // display: none;
+        display: none;
     }
 
 }

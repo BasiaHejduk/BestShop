@@ -162,54 +162,68 @@
             <h2 class="calculator__h2">Calculate how much you'll pay</h2>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="calculator__form">
-                        <input type="number" class="calculator__input">
-                        <input type="number" class="calculator__input">
-                        <select class="calculator__input">
+                    <form class="calculator__form">
+                        <input type="number" id="products" class="calculator__input" placeholder="Products quantity">
+                        <input type="number" id="orders" class="calculator__input" placeholder="Estimated orders in month">
+                        <select id="package" class="calculator__input" placeholder="Choose package">
+                            <option>Choose package</option>
                             <option>Basic</option>
                             <option>Professional</option>
                             <option>Premium</option>
                         </select>
+
+                        <!-- <div class="calc__select" id="package" data-value="">
+                            <div class="select__input">
+                              Choose package
+                            </div>
+                      
+                            <ul class="select__dropdown">
+                              <li data-value="basic">Basic</li>
+                              <li data-value="professional">Professional</li>
+                              <li data-value="premium">Premium</li>
+                            </ul>
+                          </div> -->
+
                         <div class="calculator__options">
-                            <input type="checkbox" class="calculator__checkbox">
+                            <input id="accounting" type="checkbox" class="calculator__checkbox">
                             <label>Accounting</label>
                         </div>
                         <div class="calculator__options">
-                            <input type="checkbox" class="calculator__checkbox">
+                            <input id="terminal" type="checkbox" class="calculator__checkbox">
                             <label>Rental of a payment terminal</label>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="calculator__total-result">
                         <div class="calculator__results">
-                            <div class="calculator__partial-results calculator__hidden">
+                            <div id="products-result" class="calculator__partial-results calculator__hidden">
                                 <p class="calculator__item">Products</p>
-                                <p class="calculator__operation">20 * $5</p>
-                                <p class="calculator__price">$10</p>
+                                <p class="calculator__operation"></p>
+                                <p class="calculator__price"></p>
                             </div>
-                            <div class="calculator__partial-results calculator__hidden">
+                            <div id="orders-result" class="calculator__partial-results calculator__hidden">
                                 <p class="calculator__item">Orders</p>
-                                <p class="calculator__operation">20 * $5</p>
-                                <p class="calculator__price">$10</p>
+                                <p class="calculator__operation"></p>
+                                <p class="calculator__price"></p>
                             </div>
-                            <div class="calculator__partial-results calculator__hidden">
+                            <div id="package-result" class="calculator__partial-results calculator__hidden">
                                 <p class="calculator__item">Package</p>
-                                <p class="calculator__operation">20 * $5</p>
-                                <p class="calculator__price">$10</p>
+                                <p class="calculator__operation"></p>
+                                <p class="calculator__price"></p>
                             </div>
-                            <div class="calculator__partial-results calculator__hidden">
+                            <div id="accounting-result" class="calculator__partial-results calculator__hidden">
                                 <p class="calculator__item">Accounting</p>
                                 <p class="calculator__price">$10</p>
                             </div>
-                            <div class="calculator__partial-results calculator__hidden">
+                            <div id="terminal-result" class="calculator__partial-results calculator__hidden">
                                 <p class="calculator__item">Terminal</p>
                                 <p class="calculator__price">$10</p>
                             </div>
                         </div>
-                        <div class="calculator__total calculator__hidden">
+                        <div id="total" class="calculator__total">
                             <p class="calculator__item">Total</p>
-                            <p class="calculator__price">$100</p>
+                            <p class="calculator__price">$0</p>
                         </div>
                     </div>
                 </div>

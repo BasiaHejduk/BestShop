@@ -957,6 +957,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+  position: relative;
 }
 @media (min-width: 1101px) {
   .calculator__total-result {
@@ -1016,6 +1017,16 @@ body {
   color: white;
   margin: 10px 0;
 }
+@media (min-width: 520px) {
+  .calculator__total {
+    position: absolute;
+    top: 230px;
+  }
+}
+.calculator__hidden {
+  display: none;
+}
+
 .questionaire {
   background-color: white;
   padding: 2rem 1rem;
