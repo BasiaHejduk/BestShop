@@ -31,15 +31,15 @@ function getOrdersResult() {
 function getPackageResult() {
     if (options[1].selected) {
         packageResult.firstElementChild.nextElementSibling.innerText = "Basic";
-        packageResult.lastElementChild.innerText = "$0";
+        packageResult.lastElementChild.innerText = "$" + packageBasicRate;
         return packageBasicRate;
     } else if (options[2].selected) {
         packageResult.firstElementChild.nextElementSibling.innerText = "Professional";
-        packageResult.lastElementChild.innerText = "$25";
+        packageResult.lastElementChild.innerText = "$" + packageProfessionalRate;
         return packageProfessionalRate;
     } else if (options[3].selected) {
         packageResult.firstElementChild.nextElementSibling.innerText = "Premium";
-        packageResult.lastElementChild.innerText = "$60";
+        packageResult.lastElementChild.innerText = "$" + packagePremiumRate;
         return packagePremiumRate;
     } else {
         return 0;
