@@ -12,75 +12,95 @@ const accountingResult = document.querySelector("#accounting-result");
 const terminalResult = document.querySelector("#terminal-result");
 const totalResult = document.querySelector("#total");
 
-console.log(selectPackage, packageResult);
+const productsRate = 0.5;
+const ordersRate = 0.25;
+const packageBasicRate = 0;
+const packageProfessionalRate = 25;
+const packagePremiumRate = 60;
+const accountingRate = 35;
+const terminalRate = 5;
 
 let totalPrice = 0;
 
-inputProducts.addEventListener("click", function(e) {
-    productsResult.classList.remove("calculator__hidden");
-});
+function getProductsResult() {
+    return inputProducts.value * productsRate;
+};
+function getOrdersResult() {
+    return inputOrders.value * ordersRate;
+};
+function getPackageResult() {
+    if (options[1].selected) {
+        packageResult.firstElementChild.nextElementSibling.innerText = "Basic";
+        packageResult.lastElementChild.innerText = "$0";
+        return packageBasicRate;
+    } else if (options[2].selected) {
+        packageResult.firstElementChild.nextElementSibling.innerText = "Professional";
+        packageResult.lastElementChild.innerText = "$25";
+        return packageProfessionalRate;
+    } else if (options[3].selected) {
+        packageResult.firstElementChild.nextElementSibling.innerText = "Premium";
+        packageResult.lastElementChild.innerText = "$60";
+        return packagePremiumRate;
+    } else {
+        return 0;
+    }
+};
+function getAccountingResult() {
+    if (checkboxAccounting.checked) {
+        return accountingRate;
+    } else if (!checkboxAccounting.checked) {
+        return 0;
+    }
+};
+function getTerminalResult() {
+    if (checkboxTerminal.checked) {
+        return terminalRate;
+    } else if (!checkboxTerminal.checked) {
+        return 0;
+    }
+};
+
+function calculateTotalPrice() {
+    totalPrice = 0;
+    const productsTotal = getProductsResult();
+    const ordersTotal = getOrdersResult();
+    const packageTotal = getPackageResult();
+    const accountingTotal = getAccountingResult();
+    const terminalTotal = getTerminalResult();
+    totalPrice = productsTotal + ordersTotal + packageTotal + accountingTotal + terminalTotal;
+    totalResult.lastElementChild.innerText = "$" + totalPrice;
+};
+
 inputProducts.addEventListener("keyup", function(e) {
-    productsResult.firstElementChild.nextElementSibling.innerText = inputProducts.value + " * $0.5";
-    productsResult.lastElementChild.innerText = "$" + inputProducts.value * 0.5;
-});
-inputProducts.addEventListener("change", function(e) {
-    totalPrice += inputProducts.value * 0.5;
-    totalResult.lastElementChild.innerText = "$" + totalPrice;
+    productsResult.classList.remove("calculator__hidden");
+    productsResult.firstElementChild.nextElementSibling.innerText = inputProducts.value + " * $" + productsRate;
+    productsResult.lastElementChild.innerText = "$" + getProductsResult();
+    calculateTotalPrice();
 });
 
-inputOrders.addEventListener("click", function(e) {
-    ordersResult.classList.remove("calculator__hidden");
-});
 inputOrders.addEventListener("keyup", function(e) {
-    ordersResult.firstElementChild.nextElementSibling.innerText = inputOrders.value + " * $0.25";
-    ordersResult.lastElementChild.innerText = "$" + inputOrders.value * 0.25;
-
-});
-inputOrders.addEventListener("change", function(e) {
-    totalPrice += inputOrders.value * 0.25;
-    totalResult.lastElementChild.innerText = "$" + totalPrice;
+    ordersResult.classList.remove("calculator__hidden");
+    ordersResult.firstElementChild.nextElementSibling.innerText = inputOrders.value + " * $" + ordersRate;
+    ordersResult.lastElementChild.innerText = "$" + getOrdersResult();
+    calculateTotalPrice();
 });
 
 selectPackage.addEventListener("change", function(e) {
     packageResult.classList.remove("calculator__hidden");
-    if (options[1].selected) {
-        packageResult.firstElementChild.nextElementSibling.innerText = "Basic";
-        packageResult.lastElementChild.innerText = "$0";
-        totalPrice += 0;
-    };    
-    if (options[2].selected) {
-        packageResult.firstElementChild.nextElementSibling.innerText = "Professional";
-        packageResult.lastElementChild.innerText = "$25";
-        totalPrice += 25;
-    };  
-    if (options[3].selected) {
-        packageResult.firstElementChild.nextElementSibling.innerText = "Premium";
-        packageResult.lastElementChild.innerText = "$60";
-        totalPrice += 60;
-    };  
-    totalResult.lastElementChild.innerText = "$" + totalPrice;
+    getPackageResult();
+    calculateTotalPrice();
 });
 
 checkboxAccounting.addEventListener("click", function(e) {
     accountingResult.classList.toggle("calculator__hidden");
-    accountingResult.lastElementChild.innerText = "$35";
-    if (checkboxAccounting.checked) {
-        totalPrice += 35;
-    } else if (!checkboxAccounting.checked) {
-        totalPrice -= 35;
-    }
-    totalResult.lastElementChild.innerText = "$" + totalPrice; 
+    accountingResult.lastElementChild.innerText = "$" + getAccountingResult();
+    calculateTotalPrice();
 });
 
 checkboxTerminal.addEventListener("click", function(e) {
     terminalResult.classList.toggle("calculator__hidden");
-    terminalResult.lastElementChild.innerText = "$5";
-    if (checkboxTerminal.checked) {
-        totalPrice += 5;
-    } else if (!checkboxTerminal.checked) {
-        totalPrice -= 5;
-    }
-    totalResult.lastElementChild.innerText = "$" + totalPrice;
+    terminalResult.lastElementChild.innerText = "$" + getTerminalResult();
+    calculateTotalPrice();
 });
 
 totalResult.lastElementChild.innerText = "$" + totalPrice;
